@@ -1,0 +1,29 @@
+name: Backend CI/CD
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'backend/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'backend/**'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        
+    - name: Build
+      run: cd backend && cargo build --verbose
+      
+    - name: Run tests
+      run: cd backend && cargo test --verbose
