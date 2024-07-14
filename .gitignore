@@ -1,6 +1,6 @@
 # Dependencies
 node_modules
-/target
+*/target
 
 # Build outputs
 /dist
@@ -22,3 +22,4 @@ yarn-error.log*
 # OS files
 .DS_Store
 Thumbs.db
+
