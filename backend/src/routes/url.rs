@@ -9,11 +9,6 @@ pub struct URL {
     pub url: String
 }
 
-// #[get("/url/get-long")]
-// pub fn get_long_url() -> Json<URL> {
-//     Json(services::url::get_long_url())
-// }
-
 #[get("/url/<id>")]
 pub fn get_long_url(id: String) -> Redirect {
     let response = services::url::get_long_url(id);
